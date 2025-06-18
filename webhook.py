@@ -14,7 +14,7 @@ with open('config.json', 'r', encoding='utf-8') as f:
     imei = config["imei"]
     cookies = config["cookies"]
 
-bot = ZaloAPI("<numberPhone>", "<passwd>", imei, cookies, prefix="[prefix]")
+bot = ZaloAPI("<numberPhone>", "<passwd>", imei, cookies, prefix="[prefix]") # Replace your information, example : ("943777****", "abcd8386", imei, cookies, prefix=?")
 
 
 def send_zalo_message(content, thread_id, thread_type):
@@ -65,8 +65,8 @@ def sepay_webhook():
             f"🗒 | Mã giao dịch: {reference_number}\n"
             f"Made by vdung1310, using Sepay API and ZaloAPI.\n"
         )
-        thread_id = "7329548851056192815"  
-        thread_type = ThreadType.GROUP  
+        thread_id = "<ID_GROUP>" # Paste your Groupchat ID
+        thread_type = ThreadType.GROUP
         send_zalo_message(message, thread_id, thread_type)
         print(f'message sent into: {thread_id}!')
     except Exception as e:
